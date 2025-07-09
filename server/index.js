@@ -104,7 +104,6 @@ app.delete("/api/image/:id", (req, res) => {
         .json({ error: "Failed to delete file from server" });
     }
 
-    // Remove metadata from array
     uploadedFiles.splice(fileIndex, 1);
 
     return res
