@@ -2,14 +2,15 @@
 
 ~ 9 hours
 
-# What I Didn't Finish (nice to have)
+# If Given More Time (nice to have)...
 
-- Multiple image upload
+- Multiple image uploading
 - Pagination
 - Page limits
-- DB (storage is created on the fly via Node)
+- DB (storage is created on the fly as an array of metadata objects via Node, and it's a bit wonky)
 - Tag metadata (or more filter options) for images when searching
+- Deleting images could have confirmation modals (ie. "Are you sure?")
 
-# Note (for transparency)
+# A note for transparency
 
-- Since I have never touched Node professionaally, AI was used for Node. I understand this may be an issue so I am okay
+- Since I have never touched Node professionally (some personally more recently), and I didn't want to mock the API, I used some research and AI to help me create the CRUD functions with Express.

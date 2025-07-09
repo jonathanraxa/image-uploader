@@ -52,12 +52,9 @@ app.get("/api/search", (req, res) => {
   if (!query) {
     return res.json(uploadedFiles);
   }
-
   const results = uploadedFiles.filter((file) => {
-    console.log("file: ", file);
     return file.originalName.toLowerCase().includes(query) ?? false;
   });
-  console.log("Search results:", results);
   res.json(results);
 });
 
@@ -102,7 +99,6 @@ app.delete("/api/image/:id", (req, res) => {
 
   fs.unlink(filePath, (err) => {
     if (err) {
-      console.error("Error deleting file from disk:", err);
       return res
         .status(500)
         .json({ error: "Failed to delete file from server" });

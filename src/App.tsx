@@ -21,7 +21,7 @@ function App() {
     setAllImages(images);
   };
 
-  const { handleDeleteImage } = useDelete({
+  const { handleDeleteImage, contextHolder } = useDelete({
     updateImages,
   });
 
@@ -31,6 +31,7 @@ function App() {
 
   return (
     <div className="container">
+      {contextHolder}
       <div className="heading-container">
         <Flex justify="space-between" align="center">
           <SearchInput handleSearch={handleSearch} />
@@ -39,7 +40,11 @@ function App() {
         {!!searchQuery && <p>{`Search results for "${searchQuery}"`}</p>}
       </div>
       <div className="images-container">
-        <h2>{`${allImages.length} images`}</h2>
+        <h2>
+          {allImages.length === 0 && !!searchQuery
+            ? "No images found"
+            : `${allImages.length} images`}
+        </h2>
         <Flex justify="start" align="center" gap={20} wrap>
           {allImages.map((img) => {
             return (
