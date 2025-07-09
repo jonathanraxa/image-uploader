@@ -1,0 +1,25 @@
+.container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  .heading-container {
+    margin-top: 4rem;
+  }
+  .images-container {
+    margin-top: 5rem;
+    .image-item-container {
+      position: relative;
+      .image-item-delete {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        opacity: 0.5;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      .image-item {
+        max-width: 250px;
+      }
+    }
+  }
+}
